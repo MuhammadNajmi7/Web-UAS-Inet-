@@ -47,7 +47,7 @@
                 <div>
                     <label for="kategori">Kategori</label>
                     <input type="text" name="kategori" id="kategori" 
-                    placeholdder="input nama kategori" class="form-control">
+                    placeholdder="input nama kategori" class="form-control" autocomplete="off">
                 </div>
                 <div class= "mt-3">
                     <button class="btn btn-primary" type="submit" name="simpan_kategori">Simpan</button>

@@ -78,7 +78,7 @@
                             <div class= "col-6 text-white">
                                 <h3 class="fs-3">Produk</h3>
                                 <p class= "fs-4"><?php echo $jumlahBarang ?> Produk</p>
-                                <p><a href=".produk.php" class= "text-white no-decoration">Lihat Detail</a></p>
+                                <p><a href="barang.php" class= "text-white no-decoration">Lihat Detail</a></p>
                             </div>
                         </div>
                     </div>
