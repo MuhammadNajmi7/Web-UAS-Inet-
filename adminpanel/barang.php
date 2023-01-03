@@ -104,7 +104,7 @@
                 if(isset($_POST['simpan'])){
                     $nama = htmlspecialchars($_POST['nama']);
                     $kategori = htmlspecialchars($_POST['kategori']);
-                    $harga = htmlspecialchars($_POST['harga']);
+                    $harga = $_POST['harga'];
                     $detail = htmlspecialchars($_POST['detail']);
                     $status_stok = htmlspecialchars($_POST['status_stok']);
 
@@ -116,7 +116,7 @@
                     $random_name = generateRandomString(20);
                     $new_name = $random_name . "." . $imageFileType;
 
-                    if($nama=='' || $kategori=='' || $harga=''){
+                    if($nama=='' || $kategori=='' || empty($harga)){
             ?>
                         <div class="alert alert-warning mt-3" role="alert">
                             Nama, kategori, dan harga wajib diisi
@@ -147,11 +147,10 @@
                                 }
                             }
                         }
-
+var_dump("INSERT INTO barang (kategori_id, nama, harga, foto, detail, status_stok) VALUES ('$kategori', '$nama', $harga, '$new_name', '$detail', '$status_stok')");
                         // query insert to barang table
                         $queryTambah = mysqli_query($con, "INSERT INTO barang (kategori_id, nama, harga,
-                        foto, detail, status_stok) VALUES ('$kategori', '$nama', '$harga', 
-                        '$new_name', '$detail', '$status_stok')");
+                        foto, detail, status_stok) VALUES ('$kategori', '$nama', $harga, '$new_name', '$detail', '$status_stok')");
 
                         if($queryTambah){
                 ?>
