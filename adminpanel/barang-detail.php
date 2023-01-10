@@ -50,12 +50,12 @@
                 </div>
                 <div>
                     <label for="kategori">Kategori</label>
-                    <select name="kategori" id="kategori" class="form-control" >
-                        <option value="<?php echo $data['nama_kategori'] ?>"><?php echo $data['nama_kategori'] ?></option>
+                    <select name="kategori" id="kategori" class="form-control" required>
+                        <option value="<?php echo $data['kategori_id']; ?>"><?php echo $data['nama_kategori']; ?></option>
                         <?php 
                             while($dataKategori=mysqli_fetch_array($queryKategori)){
                         ?>
-                            <option value="<?php echo $datadataKategori['id']?>"><?php echo $dataKategori['nama']; ?></option>
+                            <option value="<?php echo $dataKategori['id'];?>"><?php echo $dataKategori['nama']; ?></option>
                         <?php
                             }
                         ?>
