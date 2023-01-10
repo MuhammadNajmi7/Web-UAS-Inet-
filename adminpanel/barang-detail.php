@@ -98,8 +98,8 @@
                     </select>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
-                    <button type="submit" class="btn btn-danger" name="simpan">Hapus</button>
+                    <button type="submit" class="btn btn-primary" name="simpan">Edit</button>
+                    <button type="submit" class="btn btn-danger" name="hapus">Hapus</button>
                 </div>
             </form>
 
