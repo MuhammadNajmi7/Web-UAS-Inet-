@@ -181,6 +181,7 @@ var_dump("INSERT INTO barang (kategori_id, nama, harga, foto, detail, status_sto
                             <th>Kategori</th>
                             <th>Harga</th>
                             <th>Ketersediaan Stok</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -188,7 +189,7 @@ var_dump("INSERT INTO barang (kategori_id, nama, harga, foto, detail, status_sto
                             if($jumlahbarang==0){
                         ?>
                             <tr>
-                                <td colspan=5 class= "text-center">Tidak Ada Data Barang</td>
+                                <td colspan=6 class= "text-center">Tidak Ada Data Barang</td>
                             </tr>
                         <?php
                             }
@@ -202,6 +203,10 @@ var_dump("INSERT INTO barang (kategori_id, nama, harga, foto, detail, status_sto
                                     <td><?php echo $data['nama_kategori']; ?></td>
                                     <td><?php echo $data['harga']; ?></td>
                                     <td><?php echo $data['status_stok']; ?></td>
+                                    <td>
+                                        <a href="barang-detail.php?p=<?php echo $data['id']; ?>" 
+                                        class="btn btn-info"><i class="fas fa-search"></i></a>
+                                    </td>
                                 </tr>
                         <?php
                                 $jumlah++;
