@@ -181,7 +181,7 @@
                         Barang Berhasil Dihapus
                     </div>
 
-                    <meta http-equiv="refresh" content="0; url=kategori.php" />
+                    <meta http-equiv="refresh" content="0; url=barang.php" />
                 <?php
                 }
                 else{
