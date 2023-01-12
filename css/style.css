@@ -1,0 +1,55 @@
+.warna1 {
+    background-color: #876445;
+}
+
+.warna2 {
+    background-color: #ca965c;
+}
+
+.warna3 {
+    background-color: #eec373;
+}
+
+.warna4 {
+    background-color: #f4dfba;
+}
+
+.banner {
+    height : 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+}
+
+.highlighted-kategori {
+    height: 250px;
+}
+
+.kategori-atang-kubur{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kategori-peti-mati{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kategori-siring-kuburan{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+.no-decoration:hover {
+    color: #eec373;
+}
+
+.text-harga {
+    font-size: 20px;
+}
