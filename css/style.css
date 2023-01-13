@@ -24,19 +24,19 @@
 }
 
 .kategori-atang-kubur{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/atangkubur.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .kategori-peti-mati{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/petimati.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .kategori-siring-kuburan{
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/siringkubur.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -52,4 +52,28 @@
 
 .text-harga {
     font-size: 20px;
+}
+
+.image-box {
+    height: 250px;
+}
+
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-subscribe {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.content-subscribe a {
+    color: #fff;
+}
+
+.banner-produk {
+    height : 30vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
 }

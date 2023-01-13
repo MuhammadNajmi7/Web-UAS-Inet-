@@ -1,6 +1,6 @@
 <?php
     require "koneksi.php";
-    $queryBarang = mysqli_query($com, "SELECT id, nama, harga, foto, detail, FROM barang LIMIT 6");
+    $queryBarang = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM barang LIMIT 6");
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,8 @@
             <h3>Tentang Kami</h3>
             <p class="fs-5 mt-3">
                 Web ini adalah tempat pemesanan berbagai macam barang yang terbuat dari kayu ulin, barang yang
-                kami jual disini diantaranya ialah Atang kuburan, peti Mati, dan Siring Kuburan.
+                kami jual disini diantaranya ialah Atang kuburan, peti Mati, dan Siring Kuburan. Terdapat berbagai
+                macam varian dari kategori barang yang disebutkan diatas. 
             </p>
         </div>
     </div>
@@ -73,25 +74,31 @@
     <!-- Barang Dijual -->
     <div class="container-fluid py-5">
         <div class="container text-center">
-            <h3>Barang</h3>
+            <h3>Barang Yang Dijual</h3>
 
             <div class="row mt-5">
                 <?php while($data = mysqli_fetch_array($queryBarang)){ ?>
                 <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="image/<?php echo $data['foto'] ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $data['nama'] ?></h4>
-                            <p class="card-text text-truncate">S<?php echo $data['deatil'] ?></p>
-                            <p class="card-text text-harga">Rp.<?php echo $data['harga'] ?></p>
-                            <a href="barang-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Detail</a>
+                    <div class="card h-100" style="width: 18rem;">
+                        <div class="image-box">
+                            <img src="image/<?php echo $data['foto'] ?>" class="card-img-top" alt="...">
+                        </div>
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $data['nama'] ?></h4>
+                                <p class="card-text text-truncate">S<?php echo $data['detail'] ?></p>
+                                <p class="card-text text-harga">Rp.<?php echo $data['harga'] ?></p>
+                                <a href="barang-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
+            <a href="barang.php" class="btn btn-outline-warning mt-3 p-1 fs-3">See More</a>
         </div>
     </div>
+
+    <!-- footer -->
+    <?php require "footer.php"; ?>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="fontawesome/js/all.min.js"></script>
