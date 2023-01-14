@@ -1,7 +1,6 @@
 <?php
     require "koneksi.php";
     $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
-
     
     // get barang by nama produk/keyword
     if(isset($_GET['keyword'])){
@@ -9,7 +8,7 @@
     }
     // get barang by kategori
     elseif(isset($_GET['kategori'])){
-        $queryGetKategoriId = mysqli_query($con, "SELECT * FROM barang WHERE nama='$_GET[kategori]'");
+        $queryGetKategoriId = mysqli_query($con, "SELECT id FROM kategori WHERE nama='$_GET[kategori]'");
         $kategoriId= mysqli_fetch_array($queryGetKategoriId);
         
         $queryBarang = mysqli_query($con, "SELECT * FROM barang WHERE kategori_id='$kategoriId[id]'");
@@ -18,6 +17,8 @@
     else{
         $queryBarang = mysqli_query($con, "SELECT * FROM barang");
     }
+
+    $countData = mysqli_num_rows($queryBarang);
 ?>
 
 <!DOCTYPE html>
@@ -55,27 +56,14 @@
                 </ul>
             </div>
             <div class="col-lg-9">
-            <h3 class="text-center mb-3">Barang</h3>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
+                <h3 class="text-center mb-3">Barang</h3>
+                    <div class="row">
+                        <?php while($barang = mysqli_fetch_array($queryBarang)){ ?>
                         <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
+                            <div class="card h-100">
+                                <div class="image-box">
+                                    <img src="image/banner.jpg" class="card-img-top" alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title">1</h4>
                                     <p class="card-text text-truncate">1</p>
@@ -85,62 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
