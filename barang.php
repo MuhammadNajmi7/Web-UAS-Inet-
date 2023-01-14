@@ -57,34 +57,8 @@
             <div class="col-lg-9">
             <h3 class="text-center mb-3">Barang</h3>
                 <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card h-100" style="width: 18rem;">
-                            <div class="image-box">
-                                <img src="image/banner.jpg" class="card-img-top" alt="...">
-                            </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card h-100" style="width: 18rem;">
+                    <div class="col-md-4">
+                        <div class="card h-100">
                             <div class="image-box">
                                 <img src="image/banner.jpg" class="card-img-top" alt="...">
                             </div>
