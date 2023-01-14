@@ -23,7 +23,7 @@
             <h1>Toko Pemesanan Kayu</h1>
             <h3>Mau cari apa ?</h3>
             <div class="col-md-8 offset-md-2">
-                <form method="get" action="produk.php">
+                <form method="get" action="barang.php">
                     <div class="input-group input-group-lg my-4 ">
                         <input type="text" class="form-control" placeholder="Nama Barang" 
                         aria-label="Recipient's username" aria-describedby="basic-addon2" name="keyword">
