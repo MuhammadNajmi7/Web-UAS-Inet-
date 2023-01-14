@@ -42,10 +42,10 @@
     </div>
 
     <!-- body -->
-    <div class="container py-5">
+    <div class="container-fluid py-5">
         <div class="row">
             <div class="col-lg-3 mb-5">
-                <h3>Kategori</h3>
+            <h3>Kategori</h3>
                 <ul class="list-group">
                     <?php while($kategori = mysqli_fetch_array($queryKategori)){ ?>
                     <a href="barang.php?kategori=<?php echo $kategori['nama']; ?>">
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div class="col-lg-9">
-                <h3 class="text-center mb-3">Barang</h3>
+            <h3 class="text-center mb-3">Barang</h3>
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="card h-100" style="width: 18rem;">
@@ -65,7 +65,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">1</h4>
                                     <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000/p>
+                                    <p class="card-text text-harga">Rp.1000</p>
                                     <a href="barang-detail.php?nama=sdss" class="btn warna2 
                                     text-white">Lihat Detail</a>
                                 </div>
@@ -78,7 +78,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">1</h4>
                                     <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000/p>
+                                    <p class="card-text text-harga">Rp.1000</p>
                                     <a href="barang-detail.php?nama=sdss" class="btn warna2 
                                     text-white">Lihat Detail</a>
                                 </div>
@@ -91,7 +91,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">1</h4>
                                     <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000/p>
+                                    <p class="card-text text-harga">Rp.1000</p>
                                     <a href="barang-detail.php?nama=sdss" class="btn warna2 
                                     text-white">Lihat Detail</a>
                                 </div>
