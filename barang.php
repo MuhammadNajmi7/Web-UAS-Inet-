@@ -36,7 +36,7 @@
     <?php require "navbar.php"; ?>
     
     <!-- banner -->
-    <div class="container-fluid banner-produk d-flex align-items-center">
+    <div class="container-fluid banner2 d-flex align-items-center">
         <div class="container">
             <h1 class="text-white text-center">Barang</h1>
         </div>
@@ -58,17 +58,25 @@
             <div class="col-lg-9">
                 <h3 class="text-center mb-3">Barang</h3>
                     <div class="row">
+                        <?php 
+                            if($countData<1){
+                        ?>
+                            <h4 class="text-center my-4">Barang yang anda cari tidak tersedia</h4>
+                        <?php 
+                            }
+                        ?>
+
                         <?php while($barang = mysqli_fetch_array($queryBarang)){ ?>
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
                                 <div class="image-box">
-                                    <img src="image/banner.jpg" class="card-img-top" alt="...">
+                                    <img src="image/<?php echo $barang['foto']?>" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title">1</h4>
-                                    <p class="card-text text-truncate">1</p>
-                                    <p class="card-text text-harga">Rp.1000</p>
-                                    <a href="barang-detail.php?nama=sdss" class="btn warna2 
+                                    <h4 class="card-title"><?php echo $barang['nama']?></h4>
+                                    <p class="card-text text-truncate"><?php echo $barang['detail']?></p>
+                                    <p class="card-text text-harga">Rp.<?php echo $barang['harga']?></p>
+                                    <a href="barang-detail.php?nama=<?php echo $barang['nama']?>" class="btn warna2 
                                     text-white">Lihat Detail</a>
                                 </div>
                             </div>
@@ -79,6 +87,11 @@
             </div>
         </div>
     </div>
+
+    <!-- footer -->
+    <?php 
+        require "footer.php";
+    ?>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="fontawesome/js/all.min.js"></script>
