@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2022 at 03:13 PM
+-- Generation Time: Jan 18, 2023 at 07:07 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -30,13 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barang` (
   `id` int(11) NOT NULL,
-  `kategori_id` int(11) DEFAULT NULL,
-  `nama` varchar(255) DEFAULT NULL,
-  `harga` double DEFAULT NULL,
+  `kategori_id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `harga` int(11) NOT NULL,
   `foto` varchar(255) DEFAULT NULL,
   `detail` text,
   `status_stok` enum('habis','tersedia') DEFAULT 'tersedia'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id`, `kategori_id`, `nama`, `harga`, `foto`, `detail`, `status_stok`) VALUES
+(47, 13, 'Atang Kubur Ukuran Dewasa', 500000, 'zUocMc3V6Gz7Kr1c7XHt.jpg', '&lt;p&gt;Atang Kuburan Ukuran Dewasa&lt;/p&gt;\r\n', 'tersedia'),
+(48, 13, 'Atang Kubur Ukuran Anak-anak', 250000, 'D010xqUDYZVSytJGtl1o.jpg', '&lt;p&gt;Atang Kuburan Ukuran Anak-anak&lt;/p&gt;\r\n', 'habis'),
+(49, 15, 'Siring Kuburan', 550000, 'pidvhUxHnunHLHoaxZe2.jpg', 'Siring Kuburan Dari Kayu Ulin', 'tersedia'),
+(50, 14, 'Peti mati', 800000, 'fjaYYrDSgGDdl0CFNh8H.jpg', 'Peti mati dari kayu ulin ', 'tersedia');
 
 -- --------------------------------------------------------
 
@@ -46,7 +56,7 @@ CREATE TABLE `barang` (
 
 CREATE TABLE `kategori` (
   `id` int(11) NOT NULL,
-  `nama` varchar(100) DEFAULT NULL
+  `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -54,8 +64,29 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nama`) VALUES
-(1, 'Atang Kuburan'),
-(2, 'Ram Angin');
+(13, 'Atang Kuburan'),
+(14, 'Peti Mati'),
+(15, 'Siring Kuburan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemesanan`
+--
+
+CREATE TABLE `pemesanan` (
+  `id` int(11) NOT NULL,
+  `barang_id` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id`, `barang_id`, `jumlah`) VALUES
+(5, 47, 1),
+(7, 50, 1);
 
 -- --------------------------------------------------------
 
@@ -86,12 +117,18 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nama` (`nama`),
-  ADD KEY `kategori_barang` (`kategori_id`);
+  ADD KEY `kategori_barang` (`kategori_id`) USING BTREE;
 
 --
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -108,29 +145,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `barang`
---
-ALTER TABLE `barang`
-  ADD CONSTRAINT `kategori_barang` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
