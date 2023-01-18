@@ -46,6 +46,9 @@
                         <meta http-equiv="refresh" content="0; url=kategori.php" />
                     <?php
                 }
+                elseif ($_POST['editBtn']=='') {
+                        echo "<script>alert('Nama Harus Ada')</script>";
+                    }
                 else{
                     $query = mysqli_query($con, "SELECT * FROM kategori WHERE nama='$kategori'");
                     $jumlahData = mysqli_num_rows($query);
