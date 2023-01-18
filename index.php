@@ -1,6 +1,6 @@
 <?php
     require "koneksi.php";
-    $queryBarang = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM barang LIMIT 6");
+    $queryBarang = mysqli_query($con, "SELECT id, nama, harga, foto, detail, status_stok FROM barang LIMIT 6");
     if(@$_GET['berhasil']){
         echo "<script>alert('Pembelian Berhasil')</script>";
     }
@@ -80,20 +80,25 @@
             <h3>Barang Yang Dijual</h3>
 
             <div class="row mt-5">
-                <?php while($data = mysqli_fetch_array($queryBarang)){ ?>
-                <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card h-100" style="width: 18rem;">
-                        <div class="image-box">
-                            <img src="image/<?php echo $data['foto'] ?>" class="card-img-top" alt="...">
-                        </div>
-                            <div class="card-body">
-                                <h4 class="card-title"><?php echo $data['nama'] ?></h4>
-                                <p class="card-text text-truncate"><?php echo $data['detail'] ?></p>
-                                <p class="card-text text-harga">Rp.<?php echo $data['harga'] ?></p>
-                                <a href="barang-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Detail</a>
+                <?php while($data = mysqli_fetch_array($queryBarang)){ 
+                    if($data['status_stok']=='tersedia'){
+                ?>
+                        <div class="col-sm-6 col-md-4 mb-3">
+                            <div class="card h-100" style="width: 18rem;">
+                                <div class="image-box">
+                                    <img src="image/<?php echo $data['foto'] ?>" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title"><?php echo $data['nama'] ?></h4>
+                                    <p class="card-text text-truncate"><?php echo $data['detail'] ?></p>
+                                    <p class="card-text text-harga">Rp.<?php echo $data['harga'] ?></p>
+                                    <a href="barang-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Detail</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                <?php
+                    }
+                ?>
                 <?php } ?>
             </div>
             <a href="barang.php" class="btn btn-outline-warning mt-3 p-1 fs-3">See More</a>

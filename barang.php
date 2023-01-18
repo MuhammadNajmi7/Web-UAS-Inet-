@@ -66,21 +66,26 @@
                             }
                         ?>
 
-                        <?php while($barang = mysqli_fetch_array($queryBarang)){ ?>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100">
-                                <div class="image-box">
-                                    <img src="image/<?php echo $barang['foto']?>" class="card-img-top" alt="...">
+                        <?php while($barang = mysqli_fetch_array($queryBarang)){ 
+                            if($barang['status_stok']=='tersedia'){
+                        ?>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="image-box">
+                                            <img src="image/<?php echo $barang['foto']?>" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title"><?php echo $barang['nama']?></h4>
+                                            <p class="card-text text-truncate"><?php echo $barang['detail']?></p>
+                                            <p class="card-text text-harga">Rp.<?php echo $barang['harga']?></p>
+                                            <a href="barang-detail.php?nama=<?php echo $barang['nama']?>" class="btn warna2 
+                                            text-white">Lihat Detail</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <h4 class="card-title"><?php echo $barang['nama']?></h4>
-                                    <p class="card-text text-truncate"><?php echo $barang['detail']?></p>
-                                    <p class="card-text text-harga">Rp.<?php echo $barang['harga']?></p>
-                                    <a href="barang-detail.php?nama=<?php echo $barang['nama']?>" class="btn warna2 
-                                    text-white">Lihat Detail</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        ?>
                         <?php } ?>
                     </div>
                 </div>

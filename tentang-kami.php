@@ -26,11 +26,14 @@
         <div class="container fs-5 text-center">
             <p>
             Web ini adalah tempat pemesanan berbagai macam barang yang terbuat dari kayu ulin, barang yang
-            kami jual disini diantaranya ialah Atang kuburan, peti Mati, dan Siring Kuburan. Terdapat berbagai
+            kami jual disini diantaranya ialah atang kuburan, peti Mati, dan Siring Kuburan. Terdapat berbagai
             macam varian dari kategori barang selamat berbelanja. 
             </p>
             <p>
                 Untuk menghubungi kami dapat mengklik sosial media kami yang ada pada bagian bawah yaitu temukan kami
+            </p><br>
+            <p>
+                <strong>---------------------- TERIMA KASIH ----------------------</strong>
             </p>
         </div>
     </div>
