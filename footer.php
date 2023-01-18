@@ -16,7 +16,7 @@
                     <a href="http://youtube.com"><i class="fab fa-youtube fs-2"></i></a>
                 </div>
                 <div class="col-sm-1 d-flex justify-content-center mb-2">
-                    <a href="http://whatsapp.com"><i class="fab fa-whatsapp fs-2"></i></a>
+                    <a href="https://wa.link/fedzrz"><i class="fab fa-whatsapp fs-2"></i></a>
                 </div>
             </div>
         </div>

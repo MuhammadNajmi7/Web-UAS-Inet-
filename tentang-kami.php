@@ -25,13 +25,12 @@
     <div class="container-fluid py-5">
         <div class="container fs-5 text-center">
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, vero sapiente. Molestias doloribus quo sunt tempora est tempore unde aliquam, iusto asperiores numquam vero eum? Nesciunt maxime quas expedita qui, perspiciatis excepturi, quidem dolor magni harum dolore fugit ex reiciendis eaque modi suscipit aperiam maiores facilis autem cupiditate recusandae alias nisi quam quasi numquam. Unde, cumque! Praesentium saepe laboriosam voluptatibus odit, sequi quidem quo enim assumenda dolorem minima aperiam asperiores perferendis tenetur dolor quas laudantium. Veritatis temporibus vel quo ducimus?
+            Web ini adalah tempat pemesanan berbagai macam barang yang terbuat dari kayu ulin, barang yang
+            kami jual disini diantaranya ialah Atang kuburan, peti Mati, dan Siring Kuburan. Terdapat berbagai
+            macam varian dari kategori barang selamat berbelanja. 
             </p>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, vero sapiente. Molestias doloribus quo sunt tempora est tempore unde aliquam, iusto asperiores numquam vero eum? Nesciunt maxime quas expedita qui, perspiciatis excepturi, quidem dolor magni harum dolore fugit ex reiciendis eaque modi suscipit aperiam maiores facilis autem cupiditate recusandae alias nisi quam quasi numquam. Unde, cumque! Praesentium saepe laboriosam voluptatibus odit, sequi quidem quo enim assumenda dolorem minima aperiam asperiores perferendis tenetur dolor quas laudantium. Veritatis temporibus vel quo ducimus?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, vero sapiente. Molestias doloribus quo sunt tempora est tempore unde aliquam, iusto asperiores numquam vero eum? Nesciunt maxime quas expedita qui, perspiciatis excepturi, quidem dolor magni harum dolore fugit ex reiciendis eaque modi suscipit aperiam maiores facilis autem cupiditate recusandae alias nisi quam quasi numquam. Unde, cumque! Praesentium saepe laboriosam voluptatibus odit, sequi quidem quo enim assumenda dolorem minima aperiam asperiores perferendis tenetur dolor quas laudantium. Veritatis temporibus vel quo ducimus?
+                Untuk menghubungi kami dapat mengklik sosial media kami yang ada pada bagian bawah yaitu temukan kami
             </p>
         </div>
     </div>

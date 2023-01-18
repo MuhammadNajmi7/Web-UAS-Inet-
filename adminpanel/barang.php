@@ -219,6 +219,10 @@ var_dump("INSERT INTO barang (kategori_id, nama, harga, foto, detail, status_sto
         </div>
     </div>
 
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+    CKEDITOR.replace('detail');
+    </script>
     <script src= "../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../fontawesome/js/all.min.js"></script>
 </body>

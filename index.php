@@ -1,6 +1,9 @@
 <?php
     require "koneksi.php";
     $queryBarang = mysqli_query($con, "SELECT id, nama, harga, foto, detail FROM barang LIMIT 6");
+    if(@$_GET['berhasil']){
+        echo "<script>alert('Pembelian Berhasil')</script>";
+    }
 ?>
 
 <!DOCTYPE html>

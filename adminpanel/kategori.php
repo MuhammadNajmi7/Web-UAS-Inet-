@@ -4,6 +4,7 @@
     
     $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
     $jumlahKategori = mysqli_num_rows($queryKategori);
+    
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +69,9 @@
                         </div>
                         <?php
                     }
+                    elseif ($_POST['simpan_kategori']=='') {
+                        echo "<script>alert('Jumlah Harus Ada')</script>";
+                    }
                     else{
                         $querySimpan = mysqli_query($con, " INSERT INTO kategori (nama) VALUES 
                         ('$kategori')");
@@ -82,7 +86,7 @@
                             <?php
                         }
                         else{
-                            echo mysqli_error($con);
+                            echo "<script>alert('Jumlah Harus Ada')</script>";
                         }
                     }
                 }

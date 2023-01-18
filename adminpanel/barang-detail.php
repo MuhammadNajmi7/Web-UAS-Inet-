@@ -129,7 +129,7 @@
                     else{
                         $queryUpdate = mysqli_query($con, "UPDATE barang SET kategori_id='$kategori', 
                         nama='$nama', harga='$harga', detail='$detail', 
-                        status_stok='$status_stok' WHERE id=$id"); // ERROR DATA SDH BERHASIL DI UPDATE di database TP TIDAK MUNCUL DI WEB
+                        status_stok='$status_stok' WHERE id=$id"); 
                         
                         if($nama_file!=''){
                             if($image_size > 500000){
@@ -191,6 +191,11 @@
             ?>
         </div>
     </div>
+
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+    CKEDITOR.replace('detail');
+    </script>
 <script src= "../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

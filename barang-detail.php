@@ -2,11 +2,27 @@
     require "koneksi.php";
 
     $nama = htmlspecialchars($_GET['nama']);
-    $queryBarang = mysqli_query($con, "SELECT * FROM barang WHERE nama='$nama'");
-    $barang = mysqli_fetch_array($queryBarang);
+    if(isset($_POST['beli'])){
+        $barangid = $_POST['id'];
+        $jml = $_POST['jml'];
+        if($jml>0){
+        $insert = mysqli_query($con, "INSERT INTO `pemesanan` (`barang_id`, `jumlah`) VALUES ($barangid, $jml)");
+        header("Location: https://api.whatsapp.com/send?phone=6289691690087&text=Saya+ingin+membeli+$nama+dengan+jumlah+$jml");
+        }
+        else{
+            echo "<script>alert('Jumlah Harus Ada')</script>";
+        }
+        
+    }
 
+    $queryBarang = mysqli_query($con, "SELECT * FROM barang WHERE nama='$nama'");
+    
+    $barang = mysqli_fetch_array($queryBarang);
+    
     $queryBarangTerkait = mysqli_query($con, "SELECT * FROM barang WHERE kategori_id='$barang[kategori_id]
     ' AND id!=$barang[id] LIMIT 4");
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +57,21 @@
                     </p>
                     <p class="fs-5">
                         Status Ketersediaan : <strong><?php echo $barang['status_stok']?></strong>
+                    </p>
+                    <p class="fs-5">
+                        <strong>Paket Antar-jemput :</strong><br>
+                        Terdapat paket untuk antar jemput barang yang dibeli jika anda berminat.
+                        Harga antar jemput bisa didiskusikan setelah anda menekan tombol beli dan diarahkan ke chat whatsapp
+                        penjual. harga antar jemput tergantung dari jarak tempuh pengantaran barang dan 
+                        jenis barang yang dibeli.
+                    </p>
+                    <p class="fs-5">
+                        <form method="post">
+                            <input type="hidden" name="id" value="<?php echo $barang['id']?>">
+                            Masukkan jumlah beli :
+                            <input type="number" name="jml" value="0"><br>
+                            <input type="submit" name="beli" value="BELI" class="btn btn-primary">
+                        </form>
                     </p>
                 </div>
             </div>

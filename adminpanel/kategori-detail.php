@@ -6,6 +6,7 @@
 
     $query = mysqli_query($con, "SELECT * FROM kategori WHERE id='$id'");
     $data = mysqli_fetch_array($query);
+    
 ?>
 
 <!DOCTYPE html>
