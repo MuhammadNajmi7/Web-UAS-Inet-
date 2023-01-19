@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title"><?php echo $data['nama'] ?></h4>
-                                    <p class="card-text text-truncate"><?php echo $data['detail'] ?></p>
+                                    <p class="card-text text-truncate"><?php echo htmlspecialchars_decode($data['detail']) ?></p>
                                     <p class="card-text text-harga">Rp.<?php echo $data['harga'] ?></p>
                                     <a href="barang-detail.php?nama=<?php echo $data['nama']?>" class="btn warna2 text-white">Lihat Detail</a>
                                 </div>

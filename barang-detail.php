@@ -50,7 +50,7 @@
                 <div class="col-lg-6 offset-lg-1">
                     <h1><?php echo $barang['nama']?></h1>
                     <p class="fs-5">
-                    <?php echo $barang['detail']?>
+                    <?php echo htmlspecialchars_decode($barang['detail'])?>
                     </p>
                     <p class="text-harga">
                         Rp.<?php echo $barang['harga']?>

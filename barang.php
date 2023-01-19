@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="card-body">
                                             <h4 class="card-title"><?php echo $barang['nama']?></h4>
-                                            <p class="card-text text-truncate"><?php echo $barang['detail']?></p>
+                                            <p class="card-text text-truncate"><?php echo htmlspecialchars_decode($barang['detail'])?></p>
                                             <p class="card-text text-harga">Rp.<?php echo $barang['harga']?></p>
                                             <a href="barang-detail.php?nama=<?php echo $barang['nama']?>" class="btn warna2 
                                             text-white">Lihat Detail</a>

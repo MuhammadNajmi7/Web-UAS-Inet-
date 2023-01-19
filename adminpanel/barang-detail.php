@@ -129,7 +129,10 @@
                     else{
                         $queryUpdate = mysqli_query($con, "UPDATE barang SET kategori_id='$kategori', 
                         nama='$nama', harga='$harga', detail='$detail', 
-                        status_stok='$status_stok' WHERE id=$id"); 
+                        status_stok='$status_stok' WHERE id=$id");
+            ?>
+                        <meta http-equiv="refresh" content="0; url=barang.php"/>
+            <?php
                         
                         if($nama_file!=''){
                             if($image_size > 500000){
@@ -160,7 +163,7 @@
                                             Barang Berhasil Diupdate
                                         </div>
 
-                                        <meta http-equiv="refresh" content="0; url=barang.php" />
+                                        <meta http-equiv="refresh" content="0; url=barang.php"/>
             <?php                                        
                                     }
                                     else{

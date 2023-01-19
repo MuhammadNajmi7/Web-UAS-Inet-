@@ -34,8 +34,19 @@
                 
         <div class= "mt-3 mb-5">
             <h2>List Pesanan</h2>
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td>Dari Tanggal</td>
+                        <td><input type="date" name="dari_tgl" id="" required></td>
+                        <td>Sampai Tanggal</td>
+                        <td><input type="date" name="sampai_tgl" id="" required></td>
+                        <td><input type="submit" class="btn btn-primary" value="filter"></td>
+                    </tr>
+                </table>
+            </form>
 
-            <div class= "table-responsive mt-5">
+            <div class= "table-responsive mt-4">
                 <table class= "table">
                     <thead>
                         <tr>
@@ -45,12 +56,17 @@
                             <th>Harga</th>
                             <th>Jumlah</th>
                             <th>Total</th>
+                            <th>Tanggal Beli</th>
                             <th>Action</th>
                         </tr>
-                    </thead>
+                    </thead>                    
                     <tbody>
                         <?php
-                            {
+                            if (isset($_POST['filter'])) {
+                                $mulai = $_POST['dari_tgl'];
+                                $selesai = $_POST['sampai_tgl'];
+                                
+                            }
                                 $jumlah=1;
                                 while($data=mysqli_fetch_array($query)){
                                     $barangId = $data['barang_id'];
@@ -67,6 +83,7 @@
                                     <td><?php echo $obj['harga']; ?></td>
                                     <td><?php echo $data['jumlah']; ?></td>
                                     <td><?php echo $obj['harga']*$data['jumlah']; ?></td>
+                                    <td><?php echo $data['tgl_beli']; ?></td>
                                     <td>
                                         <a href="pesanan-detail.php?p=<?php echo $data['id']; ?>" 
                                         class="btn btn-info"><i class="fas fa-search"></i></a>
@@ -75,7 +92,7 @@
                         <?php
                                 $jumlah++;
                                 }
-                            }
+                            
                         ?>
                     </tbody>
                 </table>
