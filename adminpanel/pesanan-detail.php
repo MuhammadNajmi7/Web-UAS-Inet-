@@ -51,6 +51,11 @@
                 value="<?php echo $data['jumlah']; ?>">
             </div>
             <div>
+                <label>Tanggal Pembelian</label>
+                <input type="text" class="form-control" 
+                value="<?php echo $data['tgl_beli']; ?>">
+            </div>
+            <div>
                 <label>Total Yang Harus Dibayar</label>
                 <input type="text" class="form-control" 
                 value="<?php echo $obj['harga']*$data['jumlah']; ?>">

@@ -2,11 +2,7 @@
     require "session.php";
     require "../koneksi.php";
 
-    $query = mysqli_query($con, "SELECT * FROM pemesanan");
-
-    $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
-
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,8 +63,7 @@
                             if (isset($_POST['filter'])) {
                                 $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
                                 $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
-                                $query = mysqli_query($con, "SELECT * FROM pemesanan WHERE tgl_beli BETWEEN
-                            'dari_tgl' AND 'sampai_tgl'");
+                                $query = mysqli_query($con, "SELECT * FROM pemesanan WHERE tgl_beli BETWEEN '$dari_tgl' AND '$sampai_tgl' order by tgl_beli asc");
                             }
                             else{
                                 $query = mysqli_query($con, "SELECT * FROM pemesanan");
