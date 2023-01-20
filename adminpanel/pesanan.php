@@ -34,14 +34,14 @@
                 
         <div class= "mt-3 mb-5">
             <h2>List Pesanan</h2>
-            <form action="" method="post">
+            <form method="post">
                 <table>
                     <tr>
                         <td>Dari Tanggal</td>
                         <td><input type="date" name="dari_tgl" id="" required></td>
                         <td>Sampai Tanggal</td>
                         <td><input type="date" name="sampai_tgl" id="" required></td>
-                        <td><input type="submit" class="btn btn-primary" value="filter"></td>
+                        <td><input type="submit" class="btn btn-primary" name="filter" value="filter"></td>
                     </tr>
                 </table>
             </form>
@@ -62,12 +62,17 @@
                     </thead>                    
                     <tbody>
                         <?php
+                            $jumlah=1;
+
                             if (isset($_POST['filter'])) {
-                                $mulai = $_POST['dari_tgl'];
-                                $selesai = $_POST['sampai_tgl'];
-                                
+                                $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
+                                $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
+                                $query = mysqli_query($con, "SELECT * FROM pemesanan WHERE tgl_beli BETWEEN
+                            'dari_tgl' AND 'sampai_tgl'");
                             }
-                                $jumlah=1;
+                            else{
+                                $query = mysqli_query($con, "SELECT * FROM pemesanan");
+                            }
                                 while($data=mysqli_fetch_array($query)){
                                     $barangId = $data['barang_id'];
                                     
