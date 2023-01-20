@@ -11,6 +11,7 @@
     $obj = mysqli_fetch_array($barang);
     $kategori = mysqli_query($con, "SELECT nama FROM kategori WHERE id = ".$obj["kategori_id"]);
     $cat = mysqli_fetch_array($kategori);
+    $tanggal_baru = date("d-m-Y", strtotime($data['tgl_beli']));
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +54,7 @@
             <div>
                 <label>Tanggal Pembelian</label>
                 <input type="text" class="form-control" 
-                value="<?php echo $data['tgl_beli']; ?>">
+                value="<?php echo $tanggal_baru; ?>">
             </div>
             <div>
                 <label>Total Yang Harus Dibayar</label>

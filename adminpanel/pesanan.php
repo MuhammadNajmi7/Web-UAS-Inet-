@@ -63,7 +63,8 @@
                             if (isset($_POST['filter'])) {
                                 $dari_tgl = mysqli_real_escape_string($con, $_POST['dari_tgl']);
                                 $sampai_tgl = mysqli_real_escape_string($con, $_POST['sampai_tgl']);
-                                $query = mysqli_query($con, "SELECT * FROM pemesanan WHERE tgl_beli BETWEEN '$dari_tgl' AND '$sampai_tgl' order by tgl_beli asc");
+                                $query = mysqli_query($con, "SELECT * FROM pemesanan WHERE tgl_beli BETWEEN '$dari_tgl' 
+                                AND DATE_ADD('$sampai_tgl', INTERVAL 1 DAY) order by tgl_beli asc");
                             }
                             else{
                                 $query = mysqli_query($con, "SELECT * FROM pemesanan");
@@ -75,6 +76,8 @@
                                     $obj = mysqli_fetch_array($barang);
                                     $kategori = mysqli_query($con, "SELECT nama FROM kategori WHERE id = ".$obj["kategori_id"]);
                                     $cat = mysqli_fetch_array($kategori);
+                                    
+                                    $tanggal_baru = date("d-m-Y", strtotime($data['tgl_beli']));
                         ?>
                                 <tr>
                                     <td><?php echo $jumlah; ?></td>
@@ -83,7 +86,7 @@
                                     <td><?php echo $obj['harga']; ?></td>
                                     <td><?php echo $data['jumlah']; ?></td>
                                     <td><?php echo $obj['harga']*$data['jumlah']; ?></td>
-                                    <td><?php echo $data['tgl_beli']; ?></td>
+                                    <td><?php echo $tanggal_baru ?></td>
                                     <td>
                                         <a href="pesanan-detail.php?p=<?php echo $data['id']; ?>" 
                                         class="btn btn-info"><i class="fas fa-search"></i></a>

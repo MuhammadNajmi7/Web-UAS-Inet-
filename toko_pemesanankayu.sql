@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2023 at 07:07 AM
+-- Generation Time: Jan 20, 2023 at 07:43 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -43,8 +43,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kategori_id`, `nama`, `harga`, `foto`, `detail`, `status_stok`) VALUES
-(47, 13, 'Atang Kubur Ukuran Dewasa', 500000, 'zUocMc3V6Gz7Kr1c7XHt.jpg', '&lt;p&gt;Atang Kuburan Ukuran Dewasa&lt;/p&gt;\r\n', 'tersedia'),
-(48, 13, 'Atang Kubur Ukuran Anak-anak', 250000, 'D010xqUDYZVSytJGtl1o.jpg', '&lt;p&gt;Atang Kuburan Ukuran Anak-anak&lt;/p&gt;\r\n', 'habis'),
+(47, 13, 'Atang Kubur Ukuran Dewasa', 500000, 'NpXSgQ0auBNuCY1XQ0f8.jpg', '&lt;p&gt;Atang Kuburan Ukuran Dewasa&lt;/p&gt;\r\n', 'tersedia'),
+(48, 13, 'Atang Kubur Ukuran Anak-anak', 250000, 'D010xqUDYZVSytJGtl1o.jpg', '&lt;p&gt;Atang Kuburan Ukuran Anak-anak&lt;/p&gt;\r\n', 'tersedia'),
 (49, 15, 'Siring Kuburan', 550000, 'pidvhUxHnunHLHoaxZe2.jpg', 'Siring Kuburan Dari Kayu Ulin', 'tersedia'),
 (50, 14, 'Peti mati', 800000, 'fjaYYrDSgGDdl0CFNh8H.jpg', 'Peti mati dari kayu ulin ', 'tersedia');
 
@@ -77,16 +77,19 @@ INSERT INTO `kategori` (`id`, `nama`) VALUES
 CREATE TABLE `pemesanan` (
   `id` int(11) NOT NULL,
   `barang_id` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL
+  `jumlah` int(11) NOT NULL,
+  `tgl_beli` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemesanan`
 --
 
-INSERT INTO `pemesanan` (`id`, `barang_id`, `jumlah`) VALUES
-(5, 47, 1),
-(7, 50, 1);
+INSERT INTO `pemesanan` (`id`, `barang_id`, `jumlah`, `tgl_beli`) VALUES
+(8, 48, 3, '2023-01-17 10:02:47'),
+(10, 49, 2, '2023-01-19 11:39:47'),
+(11, 48, 3, '2023-01-18 11:41:26'),
+(12, 48, 6, '2023-01-20 09:20:11');
 
 -- --------------------------------------------------------
 
@@ -157,7 +160,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
